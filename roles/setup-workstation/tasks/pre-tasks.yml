@@ -6,11 +6,11 @@
 - name: Install required packages 
   yum: 
      name:
-       - python-pip
+       - python3
        - git
      state: latest 
 - name: Install openstack library
-  command: pip install ansible openstacksdk -U
+  command: pip3 install ansible openstacksdk -U
 - name: Create clouds.yaml file
   blockinfile:
     create: yes

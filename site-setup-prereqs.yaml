@@ -1,15 +1,15 @@
 
 - hosts: localhost
   vars:
-    OSP_GUID: {{ lookup('env','OSP_GUID') }}
-    OSP_DOMAIN: {{ lookup('env','OSP_DOMAIN') }}
-    OPENTLC_ID: {{ lookup('env','OPENTLC_ID') }}
+    OSP_GUID: "73eb"
+    OSP_DOMAIN: "green.osp.opentlc.com"
+    OPENTLC_ID: "scheon-redhat.com"
   tasks:
   - name: Create workstation inventory
     add_host:
        name: "workstation-{{OSP_GUID}}.{{OSP_DOMAIN}}"
        group: workstation
-       ansible_user: "{{ OPENTLC_ID }}"       
+       ansible_user: "{{OPENTLC_ID}}"       
 
 - hosts: workstation
   become: yes
